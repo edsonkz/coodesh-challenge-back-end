@@ -1,9 +1,9 @@
 import express from "express";
 import { url, mongo, connectionParams } from "./database/db"
+import mongoSequence from "mongoose-sequence";
 import { router } from "./router";
 
 const app = express();
-
 mongo.connect(url, connectionParams)
     .then(() => {
         console.log('Connected to database ')
@@ -14,5 +14,4 @@ mongo.connect(url, connectionParams)
 
 app.use(express.json());
 app.use(router);
-
 export { app };
