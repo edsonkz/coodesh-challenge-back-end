@@ -4,7 +4,13 @@ config();
 
 
 const mongo = mongoose;
-const url = `mongodb+srv://adminEd:${process.env.MONGODB_PASSWORD}@cluster0.86zxy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+var url = null;
+if (process.env.MONGO_DATABASE === "prod") {
+    url = process.env.MONGODB_URL;
+
+} else {
+    url = process.env.MONGODB_URL_MOCK;
+}
 
 const connectionParams = {
     useNewUrlParser: true,

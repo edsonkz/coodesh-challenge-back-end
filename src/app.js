@@ -14,4 +14,9 @@ mongo.connect(url, connectionParams)
 
 app.use(express.json());
 app.use(router);
+process.on('SIGINT', function(params) {
+    mongo.disconnect()
+    console.log("Finishing application...")
+    process.exit(1)
+});
 export { app };
