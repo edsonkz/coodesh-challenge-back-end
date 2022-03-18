@@ -12,7 +12,7 @@ Implementação utilizando Node.js do desafio Back-end Challenge 🏅 2021 - Spa
 * Node-cron para criação do CRON que sicroniza com a API Space Flight News e adiciona novos artigos ao banco de dados
 * Dotenv para utilizar um arquivo .env com variáveis ambientais
 * Axios utilizado tanto no CRON como no código de popular o banco de dados para fazer consultas a API Space Flight News
-# Instalação e Execução
+## Instalação e Execução
 É necessário possuir o ambiente Node.js instalado para executar este projeto. Versões Node.js testadas: v16.13.2 e v13.14.0.
 A aplicação principal roda no PORT 3333 e o cron no PORT 1314.
 1. Clonar este repositóiro
@@ -28,7 +28,7 @@ A aplicação principal roda no PORT 3333 e o cron no PORT 1314.
 Outro forma de executar é utilizando o docker por meio da `Dockerfile` contida neste repositório. Necessita do Docker instalado.
 1. Pode utilizar o comando `docker build --tag node-docker .` para contruir a imagem.
 2. Utilize `docker run --publish 3333:3333 node-docker` para criar o container e executa-lo.
-# Rotas
+## Rotas
 * `[GET]/:`  Retornar um Status: 200 e uma Mensagem "Back-end Challenge 2021 🏅 - Space Flight News"
 * `[GET]/articles/:`   Listar todos os artigos da base de dados, utilizar o sistema de paginação para não sobrecarregar a REQUEST
 * `[GET]/articles/{id}:` Obter a informação somente de um artigo
