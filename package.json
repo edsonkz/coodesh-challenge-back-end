@@ -1,33 +1,35 @@
 {
-    "name": "coodesh",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "module": "src/server.js",
-    "scripts": {
-        "test": "cross-env MONGO_DATABASE=mock tape -r esm ./src/test/ArticleController.test.js | tap-spec",
-        "start": "cross-env MONGO_DATABASE=prod node -r esm src/server.js",
-        "dev": "cross-env MONGO_DATABASE=prod nodemon -r esm src/server.js"
-    },
-    "author": "Edson Cavalcante",
-    "license": "ISC",
-    "dependencies": {
-        "axios": "^0.26.1",
-        "body-parser": "^1.19.2",
-        "cross-env": "^7.0.3",
-        "dotenv": "^16.0.0",
-        "esm": "^3.2.25",
-        "express": "^4.17.3",
-        "fs": "^0.0.1-security",
-        "mongoose": "^6.2.6",
-        "mongoose-paginate-v2": "^1.6.3",
-        "mongoose-sequence": "^5.3.1",
-        "node-cron": "^3.0.0",
-        "supertest": "^6.2.2",
-        "tap-spec": "^5.0.0",
-        "tape": "^5.5.2"
-    },
-    "devDependencies": {
-        "nodemon": "^2.0.15"
-    }
+	"name": "coodesh",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"module": "src/server.js",
+	"scripts": {
+		"test": "cross-env MONGO_DATABASE=mock tape -r esm ./src/test/ArticleController.test.js | tap-spec",
+		"start": "cross-env MONGO_DATABASE=prod node -r esm src/server.js",
+		"cron": "cross-env MONGO_DATABASE=prod node -r esm src/cron/index.js",
+		"populate": "cross-env MONGO_DATABASE=prod node -r esm src/populateDB.js",
+		"dev": "cross-env MONGO_DATABASE=prod nodemon -r esm src/server.js"
+	},
+	"author": "Edson Cavalcante",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.26.1",
+		"body-parser": "^1.19.2",
+		"cross-env": "^7.0.3",
+		"dotenv": "^16.0.0",
+		"esm": "^3.2.25",
+		"express": "^4.17.3",
+		"fs": "^0.0.1-security",
+		"mongoose": "^6.2.6",
+		"mongoose-paginate-v2": "^1.6.3",
+		"mongoose-sequence": "^5.3.1",
+		"node-cron": "^3.0.0",
+		"supertest": "^6.2.2",
+		"tap-spec": "^5.0.0",
+		"tape": "^5.5.2"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.15"
+	}
 }
