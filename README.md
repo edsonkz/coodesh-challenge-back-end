@@ -30,7 +30,7 @@ Outro forma de executar é utilizando o docker por meio da `Dockerfile` contida 
 2. Utilize `docker run --publish 3333:3333 node-docker` para criar o container e executa-lo.
 ## Rotas
 * `[GET]/:`  Retornar um Status: 200 e uma Mensagem "Back-end Challenge 2021 🏅 - Space Flight News"
-* `[GET]/articles/:`   Listar todos os artigos da base de dados, utilizar o sistema de paginação para não sobrecarregar a REQUEST
+* `[GET]/articles/:`   Listar todos os artigos da base de dados, utilizar o sistema de paginação para não sobrecarregar a REQUEST . Utize na `url` `size` para definir quantos artigos devem retornar por página e `page` para definir qual página deseja acessar. O `size` padrão é 5.
 * `[GET]/articles/{id}:` Obter a informação somente de um artigo
 * `[POST]/articles/:` Adicionar um novo artigo
 * `[PUT]/articles/{id}:` Atualizar um artigo baseado no id
