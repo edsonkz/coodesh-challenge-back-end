@@ -14,7 +14,7 @@ Implementação utilizando Node.js do desafio Back-end Challenge 🏅 2021 - Spa
 * Axios utilizado tanto no CRON como no código de popular o banco de dados para fazer consultas a API Space Flight News
 # Instalação e Execução
 É necessário possuir o ambiente Node.js instalado para executar este projeto. Versões Node.js testadas: v16.13.2 e v13.14.0.
-A aplicação principal roda no PORT 3333 e o cron no port 1314.
+A aplicação principal roda no PORT 3333 e o cron no PORT 1314.
 1. Clonar este repositóiro
 2. No momento, este projeto apenas funciona com MongoDB, logo é necessário criar um arquivo .env na pasta raiz de seu projeto e inserir nele duas variáveis de ambiente:
     * MONGODB_URL (recebe a url de conexão do banco de produção)
@@ -25,6 +25,9 @@ A aplicação principal roda no PORT 3333 e o cron no port 1314.
     * `npm test` para testar os endpoints da aplicação.
     * `npm run cron` para ativar o cron que irá executar todos os dias as 9 horas da manhã para atualizar o banco de dados com novos artigos da API Space Flight News.
     * `npm run populate` para popular o banco de dados (recomendável utilizar apenas uma única vez e quando desejar atualizar o banco, utilizar o cron).
+Outro forma de executar é utilizando o docker por meio da `Dockerfile` contida neste repositório. Necessita do Docker instalado.
+1. Pode utilizar o comando `docker build --tag node-docker .` para contruir a imagem.
+2. Utilize `docker run --publish 3333:3333 node-docker` para criar o container e executa-lo.
 # Rotas
 * `[GET]/:`  Retornar um Status: 200 e uma Mensagem "Back-end Challenge 2021 🏅 - Space Flight News"
 * `[GET]/articles/:`   Listar todos os artigos da base de dados, utilizar o sistema de paginação para não sobrecarregar a REQUEST
